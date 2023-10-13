@@ -7,13 +7,19 @@
 }
 
 .button{
-    width: 25%;
-    height: 2rem;
+    width: 16rem;
+    height: 2.5rem;
     border:none;
     border-radius: 2rem;
     margin-top: 3rem;
     background-color: crimson;
     font-size: 1.6em;
     color: aliceblue;
-    cursor:grabbing;
+    cursor:pointer;
+}
+
+.color{
+    color: red;
+    background-color: rgb(209, 176, 133);
+    border: none;
 }

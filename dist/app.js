@@ -1,38 +1,117 @@
 "use strict";
 (function () {
-    console.log('Interfaces');
+    console.log('Advanced Types');
 }());
-const btnn = document.querySelector('.button');
-if (btnn) {
-    btnn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (!btnn.classList.contains("color")) {
-            btnn.classList.add('color');
-            btnn.innerHTML = 'Color changed';
+const bttnn = document.querySelector('.button');
+if (bttnn) {
+    bttnn.addEventListener('click', () => {
+        if (bttnn.classList.contains('color')) {
+            bttnn.classList.remove('color');
+            bttnn.innerHTML = "Click Again";
         }
         else {
-            btnn.classList.remove('color');
-            btnn.innerHTML = "Click Again";
+            bttnn.classList.add('color');
+            bttnn.innerHTML = "AYEEEIINNN";
         }
     });
 }
-;
-;
-class Person {
-    constructor(n = '', age) {
-        this.name = n;
-        if (age) {
-            this.age = age;
-        }
+const user12 = {
+    name: 'Koustav',
+    previlage: ['SDE'],
+    startDate: new Date(),
+};
+const user13 = {
+    name: 'Random Name',
+    startDate: new Date(),
+};
+const user14 = {
+    name: 'Max',
+    previlage: ['Coach']
+};
+console.log(user12);
+function Addi(n1, n2) {
+    if (typeof n1 === 'string' || typeof n2 === 'string') {
+        return n1.toString() + n2.toString();
     }
-    greet(phrase) {
-        console.log(`${phrase}, ${this.name} your age is ${this.age}`);
+    return n1 + n2;
+}
+function printEmployeeDetails(emp) {
+    console.log(emp.name);
+    if ('previlage' in emp) {
+        console.log(emp.previlage);
+    }
+    if ('startDate' in emp) {
+        console.log(emp.startDate);
     }
 }
-let user1;
-user1 = new Person("Koustav");
-user1.greet('High there?');
+printEmployeeDetails(user12);
+printEmployeeDetails(user13);
+printEmployeeDetails(user14);
+const newNumber = 2;
+const user01 = {
+    name: 'AceNade',
+    previlage: ['Gamer'],
+    startDate: new Date(),
+};
+console.log(user01);
+class Car {
+    drive() {
+        console.log("This is a car");
+    }
+}
+class Truck {
+    drive() {
+        console.log('This is a truck');
+    }
+    ;
+    load(amount) {
+        console.log('This Truck has a load of ' + amount + ' kilos');
+    }
+    ;
+}
+const v1 = new Car;
+const v2 = new Truck;
+function whichVehicle(vehicle) {
+    vehicle.drive();
+    if (vehicle instanceof Truck) {
+        vehicle.load(1000);
+    }
+}
+whichVehicle(v1);
+whichVehicle(v2);
 ;
-let adda;
-adda = (n1, n2) => n1.toString() + n2.toString();
-console.log(adda(2, 1));
+;
+function moveAnimal(animal) {
+    let speed;
+    switch (animal.type) {
+        case 'bird':
+            speed = animal.flyingSpeed;
+            break;
+        case 'horse':
+            speed = animal.runningSpeed;
+            break;
+    }
+    console.log(animal.type.toUpperCase() + '-> Moving at a speed of ' + speed);
+}
+moveAnimal({ type: 'bird', flyingSpeed: 20 });
+const userInputField = document.getElementById('input1');
+userInputField.value = "Hi There!";
+const anotherInput = document.getElementById('input2');
+if (anotherInput) {
+    anotherInput.value = "Hola";
+}
+const errorBag = {
+    email: 'not valid',
+    1: 'invalid',
+};
+const result = Addi('Koustav', 'Das');
+console.log(result.split(''));
+const fetchedComplexData = {
+    id: 'u1',
+    name: 'Max',
+    job: { title: 'CEO', description: 'My Besipany' }
+};
+console.log(fetchedComplexData === null || fetchedComplexData === void 0 ? void 0 : fetchedComplexData.job.title);
+const anotherUserInput = '';
+const storedData = anotherUserInput !== null && anotherUserInput !== void 0 ? anotherUserInput : 'Default';
+console.log(storedData);
